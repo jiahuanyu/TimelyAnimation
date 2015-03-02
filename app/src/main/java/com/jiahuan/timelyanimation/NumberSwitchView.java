@@ -110,7 +110,7 @@ public class NumberSwitchView extends View
     protected void onDraw(Canvas canvas)
     {
         canvas.save();
-        canvas.translate(numberStrokeWidth/2 , numberStrokeWidth/2);
+        canvas.translate(numberStrokeWidth / 2, numberStrokeWidth / 2);
         canvas.scale(this.widthRatio, this.heightRatio);
         canvas.drawColor(numberBGColor);
         canvas.drawPath(makeNumberPath(currentNumberPoints), mPaint);

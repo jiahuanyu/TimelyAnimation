@@ -4,14 +4,15 @@
                 android:layout_height="match_parent"
                 android:background="#FFFFFF">
 
+    <!--自定义属性-->
     <com.jiahuan.timelyanimation.NumberSwitchView
         android:id="@+id/numberswitchview"
         android:layout_width="130dp"
         android:layout_height="200dp"
         ta:ta_number_animation_duration="600"
         ta:ta_number_bg_color="#000000"
-        ta:ta_number_stroke_width="3dp"
         ta:ta_number_color="#FFFFFF"
+        ta:ta_number_stroke_width="3dp"
         >
 
     </com.jiahuan.timelyanimation.NumberSwitchView>
