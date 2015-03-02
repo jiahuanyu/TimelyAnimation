@@ -2,6 +2,7 @@ package com.jiahuan.timelyanimation;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
@@ -67,6 +68,7 @@ public class NumberSwitchView extends View
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setColor(numberColor);
         mPaint.setStrokeWidth(strokeWidth);
+        mPaint.setPathEffect(new CornerPathEffect(200));
         //
         Interpolator interc = AnimationUtils.loadInterpolator(getContext(), android.R.interpolator.accelerate_decelerate);
         switchAnimation = new NumberSwitchAnimation();
