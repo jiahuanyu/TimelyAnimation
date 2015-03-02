@@ -1,6 +1,7 @@
 package com.jiahuan.timelyanimation;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
@@ -25,10 +26,10 @@ public class NumberSwitchView extends View
     private static final float WIDTH_PRE = 110;   // px
     private static final float HEIGHT_PRE = 170;  // px
     //
-    private int animationTime = 500; // ms
+    private int numberAnimationDuration = 500; // ms
     private int numberColor = 0XFF1A2634;
     private int numberBGColor = 0xFFABCDEF;
-    private float strokeWidth = 4; // px
+    private float numberStrokeWidth = 4; // px
     //
     private float widthRatio = 1;
     private float heightRatio = 1;
@@ -52,6 +53,16 @@ public class NumberSwitchView extends View
     public NumberSwitchView(Context context, AttributeSet attrs, int defStyleAttr)
     {
         super(context, attrs, defStyleAttr);
+
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.NumberSwitchView);
+        numberAnimationDuration = typedArray.getInt(R.styleable.NumberSwitchView_ta_number_animation_duration, numberAnimationDuration);
+        numberBGColor = typedArray.getColor(R.styleable.NumberSwitchView_ta_number_bg_color, numberBGColor);
+        numberColor = typedArray.getColor(R.styleable.NumberSwitchView_ta_number_color, numberColor);
+        numberStrokeWidth = typedArray.getDimension(R.styleable.NumberSwitchView_ta_number_stroke_width, numberStrokeWidth);
+        Log.i(TAG, "numberAnimationDuration = " + numberAnimationDuration);
+        Log.i(TAG, "numberBGColor = " + numberBGColor + "");
+        Log.i(TAG, "numberColor = " + numberColor + "");
+        Log.i(TAG, "numberStrokeWidth = " + numberStrokeWidth);
         initialize();
     }
 
@@ -64,12 +75,12 @@ public class NumberSwitchView extends View
         mPaint = new Paint();
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setColor(numberColor);
-        mPaint.setStrokeWidth(strokeWidth);
+        mPaint.setStrokeWidth(numberStrokeWidth);
         mPaint.setPathEffect(new CornerPathEffect(200));
         //
         Interpolator interc = AnimationUtils.loadInterpolator(getContext(), android.R.interpolator.accelerate_decelerate);
         switchAnimation = new NumberSwitchAnimation();
-        switchAnimation.setDuration(animationTime);
+        switchAnimation.setDuration(numberAnimationDuration);
         switchAnimation.setInterpolator(interc);
         switchAnimation.setFillAfter(true);
         //
@@ -167,15 +178,15 @@ public class NumberSwitchView extends View
     }
 
     // out api
-    public int getAnimationTime()
+    public int getNumberAnimationDuration()
     {
-        return animationTime;
+        return numberAnimationDuration;
     }
 
-    public void setAnimationTime(int animationTime)
+    public void setNumberAnimationDuration(int numberAnimationDuration)
     {
-        this.animationTime = animationTime;
-        switchAnimation.setDuration(animationTime);
+        this.numberAnimationDuration = numberAnimationDuration;
+        switchAnimation.setDuration(numberAnimationDuration);
     }
 
     public int getNumberColor()
@@ -199,15 +210,15 @@ public class NumberSwitchView extends View
         return numberBGColor;
     }
 
-    public float getStrokeWidth()
+    public float getNumberStrokeWidth()
     {
-        return strokeWidth;
+        return numberStrokeWidth;
     }
 
-    public void setStrokeWidth(float strokeWidth)
+    public void setNumberStrokeWidth(float numberStrokeWidth)
     {
-        this.strokeWidth = strokeWidth;
-        mPaint.setStrokeWidth(strokeWidth);
+        this.numberStrokeWidth = numberStrokeWidth;
+        mPaint.setStrokeWidth(numberStrokeWidth);
         invalidate();
     }
 }

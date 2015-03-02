@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="NumberSwitchView">
+        <attr name="ta_number_stroke_width" format="dimension" />
+        <attr name="ta_number_bg_color" format="reference|color" />
+        <attr name="ta_number_color" format="reference|color" />
+        <attr name="ta_number_animation_duration" format="integer" />
+    </declare-styleable>
+
+</resources>
+
