@@ -1,6 +1,7 @@
 package com.jiahuan.timelyanimation;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -19,6 +20,18 @@ public class MainActivity extends Activity
         @Override
         public void handleMessage(Message msg)
         {
+            if (number % 3 == 0)
+            {
+                mNumberSwitchView.setStrokeWidth(number);
+                mNumberSwitchView.setNumberColor(Color.RED);
+                mNumberSwitchView.setNumberBGColor(Color.BLACK);
+            }
+            else
+            {
+                mNumberSwitchView.setStrokeWidth(5);
+                mNumberSwitchView.setNumberColor(Color.rgb(10, 10, 10));
+                mNumberSwitchView.setNumberBGColor(Color.BLUE);
+            }
             mNumberSwitchView.animateTo(number);
         }
     };

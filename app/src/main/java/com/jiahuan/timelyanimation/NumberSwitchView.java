@@ -28,10 +28,8 @@ public class NumberSwitchView extends View
     private int animationTime = 500; // ms
     private int numberColor = 0XFF1A2634;
     private int numberBGColor = 0xFFABCDEF;
-    private float strokeWidth = 5; // px
+    private float strokeWidth = 4; // px
     //
-    private int height;
-    private int width;
     private float widthRatio = 1;
     private float heightRatio = 1;
     private Paint mPaint;
@@ -43,7 +41,6 @@ public class NumberSwitchView extends View
     public NumberSwitchView(Context context)
     {
         this(context, null);
-
     }
 
     public NumberSwitchView(Context context, AttributeSet attrs)
@@ -108,11 +105,11 @@ public class NumberSwitchView extends View
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
     {
-        this.height = MeasureSpec.getSize(heightMeasureSpec);
-        this.width = MeasureSpec.getSize(widthMeasureSpec);
-        this.widthRatio = this.width / WIDTH_PRE;
-        this.heightRatio = this.height / HEIGHT_PRE;
-        setMeasuredDimension(this.width, this.height);
+        int height = MeasureSpec.getSize(heightMeasureSpec);
+        int width = MeasureSpec.getSize(widthMeasureSpec);
+        this.widthRatio = width / WIDTH_PRE;
+        this.heightRatio = height / HEIGHT_PRE;
+        setMeasuredDimension(width, height);
         Log.i(TAG, "width = " + width + ", height = " + height);
     }
 
@@ -123,8 +120,6 @@ public class NumberSwitchView extends View
         {
             if (number >= 0 && number <= 9)
             {
-                Log.i(TAG, number + "");
-                Log.i(TAG, "start animation");
                 Log.i(TAG, numbers.get(number).length + "");
                 switchAnimation.setData(currentNumberPoints, numbers.get(number));
                 startAnimation(switchAnimation);
@@ -171,4 +166,48 @@ public class NumberSwitchView extends View
         return p;
     }
 
+    // out api
+    public int getAnimationTime()
+    {
+        return animationTime;
+    }
+
+    public void setAnimationTime(int animationTime)
+    {
+        this.animationTime = animationTime;
+        switchAnimation.setDuration(animationTime);
+    }
+
+    public int getNumberColor()
+    {
+        return numberColor;
+    }
+
+    public void setNumberColor(int numberColor)
+    {
+        this.numberColor = numberColor;
+        invalidate();
+    }
+
+    public void setNumberBGColor(int numberBGColor)
+    {
+        this.numberBGColor = numberBGColor;
+    }
+
+    public int getNumberBGColor()
+    {
+        return numberBGColor;
+    }
+
+    public float getStrokeWidth()
+    {
+        return strokeWidth;
+    }
+
+    public void setStrokeWidth(float strokeWidth)
+    {
+        this.strokeWidth = strokeWidth;
+        mPaint.setStrokeWidth(strokeWidth);
+        invalidate();
+    }
 }
