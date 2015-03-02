@@ -202,6 +202,7 @@ public class NumberSwitchView extends View
     public void setNumberColor(int numberColor)
     {
         this.numberColor = numberColor;
+        mPaint.setColor(numberColor);
         invalidate();
     }
 
