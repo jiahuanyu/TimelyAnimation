@@ -1,10 +1,6 @@
 # TimelyAnimation
 Timely数字变化动画效果——可以做计时器相关
 
-## 效果展示
-![ALT TEXT](https://raw.githubusercontent.com/jiahuanyu/TimelyAnimation/master/sample.gif)
-
-
 ## 嵌入步骤
 - 在布局文件中添加`NumberSwitchView`控件
 ```xml
