@@ -6,11 +6,11 @@
 
     <com.jiahuan.timelyanimation.NumberSwitchView
         android:id="@+id/numberswitchview"
-        android:layout_width="100dp"
+        android:layout_width="130dp"
         android:layout_height="200dp"
         ta:ta_number_animation_duration="600"
         ta:ta_number_bg_color="#000000"
-        ta:ta_number_stroke_width="5dp"
+        ta:ta_number_stroke_width="3dp"
         ta:ta_number_color="#FFFFFF"
         >
 

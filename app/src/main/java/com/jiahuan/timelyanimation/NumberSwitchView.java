@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -23,9 +24,10 @@ public class NumberSwitchView extends View
 {
     private static final String TAG = "NumberSwitchView";
     //
-    private static final float WIDTH_PRE = 110;   // px
-    private static final float HEIGHT_PRE = 170;  // px
+    private static final int WIDTH_PRE = 110;   // px
+    private static final int HEIGHT_PRE = 170;  // px
     //
+    private int numberWrapSpace = 1; //dp
     private int numberAnimationDuration = 500; // ms
     private int numberColor = 0XFF1A2634;
     private int numberBGColor = 0xFFABCDEF;
@@ -53,7 +55,7 @@ public class NumberSwitchView extends View
     public NumberSwitchView(Context context, AttributeSet attrs, int defStyleAttr)
     {
         super(context, attrs, defStyleAttr);
-
+        numberWrapSpace = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, numberWrapSpace, context.getResources().getDisplayMetrics());
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.NumberSwitchView);
         numberAnimationDuration = typedArray.getInt(R.styleable.NumberSwitchView_ta_number_animation_duration, numberAnimationDuration);
         numberBGColor = typedArray.getColor(R.styleable.NumberSwitchView_ta_number_bg_color, numberBGColor);
@@ -84,6 +86,7 @@ public class NumberSwitchView extends View
         switchAnimation.setInterpolator(interc);
         switchAnimation.setFillAfter(true);
         //
+
     }
 
     private void setData()
@@ -107,6 +110,7 @@ public class NumberSwitchView extends View
     protected void onDraw(Canvas canvas)
     {
         canvas.save();
+        canvas.translate(numberStrokeWidth/2 , numberStrokeWidth/2);
         canvas.scale(this.widthRatio, this.heightRatio);
         canvas.drawColor(numberBGColor);
         canvas.drawPath(makeNumberPath(currentNumberPoints), mPaint);
@@ -118,11 +122,12 @@ public class NumberSwitchView extends View
     {
         int height = MeasureSpec.getSize(heightMeasureSpec);
         int width = MeasureSpec.getSize(widthMeasureSpec);
-        this.widthRatio = width / WIDTH_PRE;
-        this.heightRatio = height / HEIGHT_PRE;
-        setMeasuredDimension(width, height);
+        this.widthRatio = (width + this.numberStrokeWidth) / WIDTH_PRE;
+        this.heightRatio = (height + this.numberStrokeWidth) / HEIGHT_PRE;
+        setMeasuredDimension((int) (width + this.numberStrokeWidth), (int) (height + this.numberStrokeWidth));
         Log.i(TAG, "width = " + width + ", height = " + height);
     }
+
 
     // 0 - 9
     public void animateTo(int number)
@@ -208,17 +213,5 @@ public class NumberSwitchView extends View
     public int getNumberBGColor()
     {
         return numberBGColor;
-    }
-
-    public float getNumberStrokeWidth()
-    {
-        return numberStrokeWidth;
-    }
-
-    public void setNumberStrokeWidth(float numberStrokeWidth)
-    {
-        this.numberStrokeWidth = numberStrokeWidth;
-        mPaint.setStrokeWidth(numberStrokeWidth);
-        invalidate();
     }
 }
