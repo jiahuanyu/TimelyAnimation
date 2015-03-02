@@ -1,14 +1,29 @@
 # TimelyAnimation
 Timely数字变化动画效果——可以做计时器相关
 
+## 开发环境
+`TimelyAnimation`是基于AndroidStudio开发的
+
 ## 嵌入步骤
 - 在布局文件中添加`NumberSwitchView`控件
 ```xml
-  <com.jiahuan.timelyanimation.NumberSwitchView
-      android:id="@+id/numberswitchview"
-      android:layout_width="100dp"
-      android:layout_height="200dp">
-  </com.jiahuan.timelyanimation.NumberSwitchView>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:ta="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF">
+
+    <!-- 自定义属性 -->
+    <com.jiahuan.timelyanimation.NumberSwitchView
+        android:id="@+id/numberswitchview"
+        android:layout_width="130dp"
+        android:layout_height="200dp"
+        ta:ta_number_animation_duration="600"
+        ta:ta_number_bg_color="#000000"
+        ta:ta_number_stroke_width="3dp"
+        ta:ta_number_color="#FFFFFF">
+    </com.jiahuan.timelyanimation.NumberSwitchView>
+</RelativeLayout>
 ```
 
 - 在Activity中获取`NumberSwitchView`
@@ -31,6 +46,16 @@ public class MainActivity extends Activity
         @Override
         public void handleMessage(Message msg)
         {
+            if (number % 3 == 0)
+            {
+                mNumberSwitchView.setNumberColor(Color.RED);
+                mNumberSwitchView.setNumberBGColor(Color.BLACK);
+            }
+            else
+            {
+                mNumberSwitchView.setNumberColor(Color.rgb(10, 10, 10));
+                mNumberSwitchView.setNumberBGColor(Color.BLUE);
+            }
             mNumberSwitchView.animateTo(number);
         }
     };
@@ -59,10 +84,8 @@ public class MainActivity extends Activity
         Timer timer = new Timer();
         timer.schedule(timerTask, 1000, 1000);
     }
-
 }
 ```
 
-### 下个版本
-- 做成类库
-- 更多自定义属性
+## 存在的问题
+- 目前数字的点集数据不是很好
