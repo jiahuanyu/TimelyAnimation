@@ -1,4 +1,4 @@
-package com.jiahuan.timelyanimation;
+package com.jiahuan.library.timelyanimation;
 
 import android.content.Context;
 import android.content.res.TypedArray;
