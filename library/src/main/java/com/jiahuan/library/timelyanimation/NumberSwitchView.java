@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.os.Looper;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -182,6 +183,19 @@ public class NumberSwitchView extends View
         return p;
     }
 
+
+    private void invalidateView()
+    {
+        if (Looper.getMainLooper() == Looper.myLooper())
+        {
+            invalidate();
+        }
+        else
+        {
+            postInvalidate();
+        }
+    }
+
     // out api
     public int getNumberAnimationDuration()
     {
@@ -203,16 +217,19 @@ public class NumberSwitchView extends View
     {
         this.numberColor = numberColor;
         mPaint.setColor(numberColor);
-        invalidate();
+        invalidateView();
     }
 
     public void setNumberBGColor(int numberBGColor)
     {
         this.numberBGColor = numberBGColor;
+        invalidateView();
     }
 
     public int getNumberBGColor()
     {
         return numberBGColor;
     }
+
+
 }
