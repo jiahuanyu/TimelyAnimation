@@ -17,7 +17,7 @@ Timely数字变化动画效果——可以做计时器相关
                 android:background="#FFFFFF">
 
     <!-- 自定义属性 -->
-    <com.jiahuan.timelyanimation.NumberSwitchView
+    <com.jiahuan.library.timelyanimation.NumberSwitchView
         android:id="@+id/numberswitchview"
         android:layout_width="130dp"
         android:layout_height="200dp"
@@ -25,7 +25,7 @@ Timely数字变化动画效果——可以做计时器相关
         ta:ta_number_bg_color="#000000"
         ta:ta_number_stroke_width="3dp"
         ta:ta_number_color="#FFFFFF">
-    </com.jiahuan.timelyanimation.NumberSwitchView>
+    </com.jiahuan.library.timelyanimation.NumberSwitchView>
 </RelativeLayout>
 ```
 
