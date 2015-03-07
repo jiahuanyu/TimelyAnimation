@@ -4,6 +4,9 @@ Timely数字变化动画效果——可以做计时器相关
 ## 效果展示
 ![ALT TEXT](https://github.com/jiahuanyu/TimelyAnimation/raw/master/sample.gif)
 
+## 系统要求
+Android v2.2+
+
 ## 开发环境
 `TimelyAnimation`是基于AndroidStudio开发的
 
