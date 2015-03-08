@@ -66,6 +66,7 @@ public class NumberSwitchView extends View
         Log.i(TAG, "numberBGColor = " + numberBGColor + "");
         Log.i(TAG, "numberColor = " + numberColor + "");
         Log.i(TAG, "numberStrokeWidth = " + numberStrokeWidth);
+        typedArray.recycle();
         initialize();
     }
 
