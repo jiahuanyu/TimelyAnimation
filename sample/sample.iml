@@ -85,7 +85,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 21 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="com.jiahuan.timelyanimation-0.5.0-" level="project" />
+    <orderEntry type="library" exported="" name="timelyanimation-0.5.0" level="project" />
   </component>
 </module>
 
