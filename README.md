@@ -1,17 +1,32 @@
 # TimelyAnimation
-Timely数字变化动画效果——可以做计时器相关
+Number Vector Animation. Apply in timer or other application.
 
-## 效果展示
+## Sample Show
 ![ALT TEXT](./sample.gif)
 
-## 系统要求
+## System Demand
 Android v2.2+
 
-## 开发环境
+## Environment
 `TimelyAnimation`是基于AndroidStudio开发的
 
-## 嵌入步骤
-- 在布局文件中添加`NumberSwitchView`控件
+## Apply Step
+- Gradle
+```
+compile(group: 'com.jiahuan.timelyanimation', name: 'timelyanimation', version: '0.5.0', ext: 'aar')
+```
+
+- Maven
+```xml
+<dependency>
+        <groupId>com.jiahuan.timelyanimation</groupId>
+        <artifactId>timelyanimation</artifactId>
+        <version>0.5.0</version>
+        <type>aar</type>
+</dependency>
+```
+
+- Add `NumberSwitchView` in layout
 ```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:ta="http://schemas.android.com/apk/res-auto"
@@ -19,7 +34,7 @@ Android v2.2+
                 android:layout_height="match_parent"
                 android:background="#FFFFFF">
 
-    <!-- 自定义属性 -->
+    <!-- Custom Properties -->
     <com.jiahuan.timelyanimation.NumberSwitchView
         android:id="@+id/numberswitchview"
         android:layout_width="130dp"
@@ -32,15 +47,14 @@ Android v2.2+
 </RelativeLayout>
 ```
 
-- 在Activity中获取`NumberSwitchView`
+- Use `NumberSwitchView`
 ```java
-// 获取控件
 mNumberSwitchView = (NumberSwitchView) findViewById(R.id.numberswitchview);
-// 调用数字变化动画 number = [0,9]
+// animation function number = [0,9]
 mNumberSwitchView.animateTo(number);
 ```
 
-- 简单案例
+- Simple Sample
 ```java
 public class MainActivity extends Activity
 {
@@ -93,5 +107,5 @@ public class MainActivity extends Activity
 }
 ```
 
-## 存在的问题
-- 目前数字的点集数据不是很好
+## Exist Problem
+- Not good number points array
