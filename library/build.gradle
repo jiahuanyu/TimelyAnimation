@@ -5,3 +5,14 @@ android {
     buildToolsVersion "21.1.1"
 }
 
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
+    }
+}
+
+apply from: 'https://raw.githubusercontent.com/jiahuanyu/gradle-publish/master/bintray.gradle'
+
