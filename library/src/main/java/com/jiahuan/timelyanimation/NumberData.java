@@ -1,4 +1,4 @@
-package com.jiahuan.library.timelyanimation;
+package com.jiahuan.timelyanimation;
 
 /**
  * Created by doom on 15/3/1.

@@ -1,4 +1,4 @@
-package com.jiahuan.timelyanimation;
+package com.jiahuan.timelyanimation.sample;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
-import com.jiahuan.library.timelyanimation.NumberSwitchView;
+import com.jiahuan.timelyanimation.NumberSwitchView;
 
 import java.util.Timer;
 import java.util.TimerTask;
