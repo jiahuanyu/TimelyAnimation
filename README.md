@@ -2,7 +2,7 @@
 Timely数字变化动画效果——可以做计时器相关
 
 ## 效果展示
-![ALT TEXT](https://github.com/jiahuanyu/TimelyAnimation/raw/master/sample.gif)
+![ALT TEXT](./sample.gif)
 
 ## 系统要求
 Android v2.2+
@@ -20,7 +20,7 @@ Android v2.2+
                 android:background="#FFFFFF">
 
     <!-- 自定义属性 -->
-    <com.jiahuan.library.timelyanimation.NumberSwitchView
+    <com.jiahuan.timelyanimation.NumberSwitchView
         android:id="@+id/numberswitchview"
         android:layout_width="130dp"
         android:layout_height="200dp"
@@ -28,7 +28,7 @@ Android v2.2+
         ta:ta_number_bg_color="#000000"
         ta:ta_number_stroke_width="3dp"
         ta:ta_number_color="#FFFFFF">
-    </com.jiahuan.library.timelyanimation.NumberSwitchView>
+    </com.jiahuan.timelyanimation.NumberSwitchView>
 </RelativeLayout>
 ```
 
