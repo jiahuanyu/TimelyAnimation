@@ -8,7 +8,7 @@ Number Vector Animation. Apply in timer or other application.
 Android v2.2+
 
 ## Environment
-`TimelyAnimation`是基于AndroidStudio开发的
+`TimelyAnimation` is developed by Android Studio
 
 ## Apply Step
 - Gradle
