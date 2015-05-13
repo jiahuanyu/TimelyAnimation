@@ -1,16 +1,14 @@
 # TimelyAnimation
 Number Vector Animation. Apply in timer or other application.
-
-## Sample Show
 ![ALT TEXT](./sample.gif)
 
-## System Demand
+## System Required
 Android v2.2+
 
-## Environment
-`TimelyAnimation` is developed by Android Studio
+## TODO
+Android Studio
 
-## Apply Step
+## How to use it?
 - Gradle
 ```
 compile(group: 'com.jiahuan.timelyanimation', name: 'timelyanimation', version: '0.5.0', ext: 'aar')
@@ -54,7 +52,7 @@ mNumberSwitchView = (NumberSwitchView) findViewById(R.id.numberswitchview);
 mNumberSwitchView.animateTo(number);
 ```
 
-- Simple Sample
+- Example
 ```java
 public class MainActivity extends Activity
 {
