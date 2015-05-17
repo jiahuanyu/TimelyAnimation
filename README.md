@@ -2,7 +2,7 @@
 Number Vector Animation. Apply in timer or other application.<br/>
 ![ALT TEXT](./sample.gif)
 
-## System Required
+## System Requirement
 Android v2.2+
 
 ## TODO
