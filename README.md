@@ -1,6 +1,6 @@
 # TimelyAnimation
 Number Vector Animation. Apply in timer or other application.<br/>
-![ALT TEXT](./sample.gif)
+![SAMPLE](./images/sample.gif)
 
 ## System Requirement
 Android v2.2+
