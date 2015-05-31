@@ -3,7 +3,7 @@ Number Vector Animation. Apply in timer or other application.<br/>
 ![SAMPLE](./images/sample.gif)
 
 ## System Requirement
-Android v2.2+
+Android v2.3+
 
 ## TODO
 Android Studio
