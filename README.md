@@ -1,4 +1,4 @@
-# TimelyAnimation
+# TimelyAnimation  [No Longer Support]
 Number Vector Animation. Apply in timer or other application.<br/>
 ![SAMPLE](./images/sample.gif)
 
